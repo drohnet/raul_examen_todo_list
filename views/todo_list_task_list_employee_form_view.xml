@@ -1,14 +1,15 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data> 
         <record id="todo_task_list_employee_form_view" model="ir.ui.view">
-                <field name="name">todo task list employee form</field>
-                <field name="model">hr.employee</field>
-                <field name="arch" type="xml">
-                    <form string="todo_task_form">
-                        <field name="name"/>  
-                    </form>
-                </field>
+            <field name="name">todo task list employee form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Public Information']//group[@string='Contact Information']//field[@name='work_location']" position="after">
+                    <field name="execution_level"/>
+                </xpath>
+            </field>
         </record>
     </data>
 </openerp>			

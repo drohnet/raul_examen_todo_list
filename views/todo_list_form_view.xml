@@ -15,8 +15,7 @@
 								<field name="employee_id"/>
 							</group>
 							<group>
-								<field name="task_date"/>
-								<!--<field name="states"/>-->
+								 <field name="task_date"/>
 							</group>
                         </group>
                      <label for="subtask_ids"/>

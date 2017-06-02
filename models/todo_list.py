@@ -10,7 +10,7 @@ class todo_list_task(models.Model):
 	
 	name = fields.Char(string='Task Name')
 	employee_id = fields.Many2one('hr.employee', string = "Employee")
-	#states = fields.Selection(STATES, string='state', required=False),
+	state = fields.Selection(STATES, string='state', required=False),
 	task_date = fields.Datetime(string="Task date")
 	subtask_ids = fields.One2many('sub.task.list', 'name', string='Sub task')
 	

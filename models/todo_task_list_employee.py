@@ -8,5 +8,5 @@ EXECUTION_LEVELS=[('1','1'),
 class sub_task(models.Model):
 	_inherit='hr.employee'
 
-	execution_level = fields.Selection(EXECUTION_LEVELS, string='Level')
+	execution_level = fields.Selection(EXECUTION_LEVELS, string='Level', required=True)
 
