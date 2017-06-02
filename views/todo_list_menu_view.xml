@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record id="action_todo_task" model="ir.actions.act_window" >
+			<field name="name">task todo</field>
+			<field name="res_model">todo.list.task</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+        
+        <record id="action_todo_task_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="todo_list_task_tree_view"/>
+            <field name="act_window_id" ref="action_todo_task"/>
+        </record>
+        
+        <record id="action_todo_task_list_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="todo_task_list_form_view"/>
+            <field name="act_window_id" ref="action_todo_task"/>
+        </record>
+        
+        <record id="action_todo_task_employee" model="ir.actions.act_window" >
+			<field name="name">task todo employee</field>
+			<field name="res_model">hr.employee</field>
+			<field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+		</record>
+        
+        <record id="action_todo_task_employee_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="todo_list_task_employee_tree_view"/>
+            <field name="act_window_id" ref="action_todo_task_employee"/>
+        </record>
+        
+        <record id="action_todo_task_employee_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="todo_task_list_employee_form_view"/>
+            <field name="act_window_id" ref="action_todo_task_employee"/>
+        </record>
+
+		<menuitem id="root_todo_list"
+		          name="Todo list menu"        
+                  />
+
+        <menuitem id="menu_todo_list" name="Menu"
+                  parent="root_todo_list" 
+				  sequence="10" 			      
+				  />
+				  
+            <menuitem id="menu_todo_task" name="task"
+                      parent="menu_todo_list" 
+                      sequence="20" 
+                      action="action_todo_task"/>
+                      
+            <menuitem id="menu_todo_task_employee" name="Employee"
+                      parent="menu_todo_list" 
+                      sequence="20" 
+                      action="action_todo_task_employee"/>
+	</data>
+</openerp>
+
+
+
+
+
+
+
+
+
