@@ -59,7 +59,7 @@
                       
             <menuitem id="menu_todo_task_employee" name="Employee"
                       parent="menu_todo_list" 
-                      sequence="20" 
+                      sequence="30" 
                       action="action_todo_task_employee"/>
 	</data>
 </openerp>

@@ -18,8 +18,8 @@
 		#'workflow/todo_list_workflow.xml',
 		'views/todo_list_form_view.xml',
 		'views/todo_list_tree_view.xml',
-		'views/todo_list_menu_view.xml',
 		'views/todo_list_task_employee_tree_views.xml',
 		'views/todo_list_task_list_employee_form_view.xml',
+        'views/todo_list_menu_view.xml',
     ],
 }
