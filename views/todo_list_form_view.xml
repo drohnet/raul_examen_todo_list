@@ -6,28 +6,42 @@
                 <field name="model">todo.list.task</field>
                 <field name="arch" type="xml">
                     <form string="todo_task_form">
-						<!--<header>
-						<field name="state" widget='statusbar'/>
-						</header>-->
-						<group>
-							<group>
-								<field name="name"/>
-								<field name="employee_id"/>
-							</group>
-							<group>
-								 <field name="task_date"/>
-							</group>
-                        </group>
-                     <label for="subtask_ids"/>
-                     <field name="subtask_ids" >
-                        <tree>
-                           <field name="name"/>
-                           <field name="description"/>
-                           <field name="sub_task_done"/>
-                           <field name="task_date"/>
-                           <field name="do_it"/>
-                        </tree>
-                    </field> 
+                        <sheet>
+                            <header>
+                                <!--<button name="button_action_check_in"
+                                        type="workflow" 
+                                        state="check_in" 
+                                        string="check In"/>-->
+                                <button name="action_in_process"
+                                        type="object" state="in_process" 
+                                        string="Start" 
+                                        attrs="{'invisible':[('state', '=', 'in_process')]}"/>
+                                <button name="action_draft"
+                                        type="object" state="draft" 
+                                        string="Draft" 
+                                       attrs="{'invisible':[('state', '=', 'draft')]}"/>
+                                <button name="action_done"
+                                        type="object" state="done" 
+                                        string="Finish"
+                                       attrs="{'invisible':[('state', '=', 'done')]}"  />
+                            <field name="state" widget='statusbar'/>
+                            </header>
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="task_lvl"/>
+                                    <field name="employee_id"
+                                        options="{'no_create': True, 'no_quick_create': True, 'no_create_edit':True,'no_open': True}"
+                                        domain="[('execution_level','=',task_lvl)]"/>
+                                </group>
+                                <group>
+                                     <field name="start_datetime"/>
+                                     <field name="end_datetime"/>
+                                     <field name="total_days"/>
+                                </group>
+                            </group>
+                            <field name="subtask_head_ids"/>
+                    </sheet> 
                    </form>
                 </field>
         </record>

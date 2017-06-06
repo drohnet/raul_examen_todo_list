@@ -15,11 +15,13 @@
     'depends': ['base','hr','hr_timesheet_sheet'],
     'data': [
 		#'security/ir.model.access.csv',
-		#'workflow/todo_list_workflow.xml',
+		'workflow/todo_list_workflow.xml',
 		'views/todo_list_form_view.xml',
 		'views/todo_list_tree_view.xml',
 		'views/todo_list_task_employee_tree_views.xml',
 		'views/todo_list_task_list_employee_form_view.xml',
+        'views/todo_list_head_form.xml',
+        'views/todo_list_head_tree.xml',
         'views/todo_list_menu_view.xml',
     ],
 }

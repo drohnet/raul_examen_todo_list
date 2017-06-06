@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<openerp>
+	<data> 
+        <record id="todo_task_head_form_view" model="ir.ui.view" >
+                <field name="name">todo task head</field>
+                <field name="model">sub.task.head</field>
+                <field name="arch" type="xml">
+                    <form string="todo_task_form">
+                        <sheet>
+                        <group>
+                            <group>  
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="sub_task_done"/>
+                            </group>
+                        </group>                     
+                        <label for="subtask_ids"/>
+                        <field name="subtask_ids" context="{'sub_task_id':active_id}">
+                            <tree editable="True">
+                                <field name="done"/>
+                                <field name="sub_task_date"/>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="hour_start"/>
+                                <field name="hour_end"/>
+                                <field name="consumed_hours"/>
+                            </tree>
+                        </field>
+                    </sheet> 
+                   </form>
+                </field>
+        </record>
+    </data>
+</openerp>			

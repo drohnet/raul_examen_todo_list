@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="todo_list_head_tree_view" model="ir.ui.view">
+			<field name="name">todo.list.head.tree.view</field>
+			<field name="model">sub.task.head</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+                    <field name="sub_task_done"/>
+				</tree>
+			</field>
+		</record>
+	</data>
+</openerp>
